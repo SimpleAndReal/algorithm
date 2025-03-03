@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",          // 编译目标 ES 版本
+    "module": "NodeNext",         // 模块系统（推荐 NodeNext 或 CommonJS）
+    "outDir": "./dist",           // 输出目录
+    "rootDir": "./src",           // 源代码目录
+    "strict": true,               // 启用严格类型检查
+    "esModuleInterop": true,      // 兼容 CommonJS/ES 模块
+    "skipLibCheck": true,         // 跳过库类型检查（可选）
+    "moduleResolution": "NodeNext" // 模块解析策略
+  },
+  "include": ["src/**/*"],        // 包含的文件
+  "exclude": ["node_modules"]      // 排除的文件
+}

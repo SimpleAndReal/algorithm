@@ -1,0 +1,1 @@
+execute "npm run watch" or "npm run dev"

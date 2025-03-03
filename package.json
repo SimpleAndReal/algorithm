@@ -1,0 +1,29 @@
+{
+  "name": "algorithm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "watch": "concurrently \"tsc --watch\" \"nodemon dist/index.js\"",
+    "dev": "nodemon --ext ts --watch src/ --exec \"npx ts-node src/index.ts\" --delay 2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimpleAndReal/algorithm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SimpleAndReal/algorithm/issues"
+  },
+  "homepage": "https://github.com/SimpleAndReal/algorithm#readme",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.13.8",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}
