@@ -1,5 +1,5 @@
 export class Node<T>{
-    value:T | null
+    value:T
     left: Node<T> |null
     right: Node<T> | null 
 
