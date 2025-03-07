@@ -17,7 +17,7 @@ export class Queue<T> {
         return this.items.length === 0;
     }
 
-    front(): T | undefined {
+    front(): T {
         return this.items[0];
     }
 }
