@@ -1,5 +1,5 @@
 import { Node } from "./type/Node"
-export class BanaryTree<T> {
+export class BanarySearchTree<T> {
     private root: Node<T> | null;
     private current_root: Node<T> | null;
     constructor(value:T) {
