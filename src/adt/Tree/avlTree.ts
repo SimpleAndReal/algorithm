@@ -15,6 +15,44 @@ export class AvlTree<T> extends BanarySearchTree<T> {
         }
     }
 
+    insertNode(node: Node<T> | null, value: any): Node<T> | null {
+        if (node == null) {
+            return new Node(value);
+        }
+        if (node.value == value) {
+            throw new Error("value exist")
+        }
+        if (node.value < value) {
+            node.left = this.insertNode(node.left, value);
+        }
+        if (node.value > value) {
+            node.right = this.insertNode(node.right, value);
+
+        }
+        const balanceFactor = this.getBalanceFactor(node)
+        if (balanceFactor == 2) {
+            if (node.left) {
+                if (this.getBalanceFactor(node.left) == -1) {
+                    this.rotationLR(node)
+                } else {
+                    this.rotationLL(node);
+                }
+            }
+
+        }
+        if (balanceFactor == -2) {
+            if (node.right) {
+                if (this.getBalanceFactor(node.right) == 1) {
+                    this.rotationRL(node)
+                } else {
+                    this.rotationRR(node);
+                }
+            }
+
+        }
+        return node;
+    }
+
     // result ->  0 1 2 -2  | 2-> left hight  |  -2->rirght heigh
     getBalanceFactor(node: Node<T>): number {
         const height = this.getNodeHeight(node?.left) - this.getNodeHeight(node?.right);
@@ -52,7 +90,7 @@ export class AvlTree<T> extends BanarySearchTree<T> {
     }
 
     //RL
-    rotationRL(node: Node<T>){
+    rotationRL(node: Node<T>) {
         if (node.left) {
             node.left = this.rotationLL(node.left);
         }

@@ -18,7 +18,7 @@ export class BanarySearchTree<T> {
         return this.getNode(this.root, value);
     }
 
-    private insertNode(node: Node<T> | null, value: any): Node<T>|null{
+    protected insertNode(node: Node<T> | null, value: any): Node<T>|null{
         if (node == null) {
             return new Node(value);
         }
